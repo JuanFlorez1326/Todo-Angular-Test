@@ -1,0 +1,12 @@
+<mat-card *ngFor="let item of todos">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Description: {{ item.description }}</mat-card-title>
+      <mat-card-subtitle>Priority: {{ item.priority }}</mat-card-subtitle>
+      <mat-card-subtitle>Status: {{ item.completed ? 'Completado': 'No completado' }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button (click)="deleteTodo(item.id)">Delete</button>
+      <button mat-button (click)="checkTask(item.id)">Check</button>
+    </mat-card-actions>
+  </mat-card>
