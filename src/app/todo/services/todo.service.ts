@@ -33,7 +33,8 @@ export class TodoService {
   }
 
   public deleteTodo(id: number) {
-    this.todos = this.todos.filter((todo: any) => todo.id !== id);
+    const index = this.todos.findIndex((todo: any) => todo.id === id);
+    this.todos.splice(index, 1)
     this.saveTodos()
   }
 

@@ -8,22 +8,18 @@ import { TodoService } from '../../services/todo.service';
 })
 export class TodoListComponent {
 
-  public todos: any = [];
+  public todos: any = this.todoService.todos;
 
   constructor(
     private todoService: TodoService
   ) {}
 
   ngOnInit(): void {
-    this.getTodos()
+    
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes) this.getTodos()
-  }
-
-  public getTodos() {
-    this.todos = this.todoService.todos
+    if(changes) this.todos = this.todoService.todos
   }
 
   public deleteTodo(id: string) {
